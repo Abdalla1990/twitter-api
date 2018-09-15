@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis|Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Pacifico|Satisfy|johns-icons);
+@import url(https://fonts.googleapis.com/css?family=Helvetica|Neue|Helvetica|Arial|sans-serif);
+@import './base/settings'; // this has all the commonly used spacing sizes and padding we use in multiple locations and it has to be defined before anythign else. 
+@import './base/base';
+@import './base/animation';
+@import './components/Home';
+@import './components/feeds';
+@import './components/menu';
+@import './components/account';

@@ -1,0 +1,78 @@
+.accounts-menu_container {
+    z-index: 5;
+    text-align: left;
+    opacity: 1;
+    padding-top: 5em;
+    // text-shadow: 0px 0px 10px black;
+    transition: all .3s ease-in;
+    width: 32%;
+    background-color: darken($white, 30%);
+    @media screen and (max-width: 600px) {
+        right: 30%;
+        text-align: center;
+        top: 0;
+        padding-top: 1em;
+    }
+}
+
+.title {
+    color: $white;
+    // text-shadow: 0px 0px 4px $gray;
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+    // position: relative;
+    @media screen and (max-width: 600px) {
+        max-width: 500px;
+    }
+    z-index: 1;
+    // transform: translateY(0px);
+    // transition: all 1s cubic-bezier(.17, .67, .35, 1);
+    // -webkit-animation: fadein 0.7s ease-in;
+    // -moz-animation: fadein 0.7s ease-in;
+    // -o-animation: fadein 0.7s ease-in;
+    // animation: fadein 0.7s ease-in;
+}
+
+.twitter_account {
+    position: relative;
+    padding: 0px 8% 72px 7%;
+    width: 280px;
+    z-index: 1;
+    text-align: center;
+    background-color: transparent;
+    //margin-top: 1vh;
+    // transform: translateY(0px);
+    // transition: all 1s cubic-bezier(.17, .67, .35, 1);
+    // -webkit-animation: fadein 1.9s ease-in;
+    // -moz-animation: fadein 1.9s ease-in;
+    // -o-animation: fadein 1.9s ease-in;
+    // animation: fadein 1.9s ease-in;
+    .action {
+        display: flex;
+        justify-content: center;
+        padding: 0.6vw;
+        border: solid 1px white;
+        border-radius: 50px;
+        transition: all .8s ease-in;
+        color: white;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color .2s ease-in;
+        &:hover {
+            background-color: $primary-blue;
+            transition: all .2s ease-in, color .8s ease-in;
+            // color: $gray;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 2.5vw;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        margin-top: 60px;
+        margin-left: 20%;
+        height: 29px;
+        width: 50%;
+    }
+}

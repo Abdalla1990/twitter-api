@@ -1,0 +1,56 @@
+.twitter-feeds_container {
+    z-index: 5;
+    text-align: center;
+    opacity: 1;
+    width: 88%;
+    padding-top: 5em;
+    // text-shadow: 0px 0px 10px black;
+    transition: all .3s ease-in;
+    border-left: solid 1px $white;
+    // background-color: darken($white, 30%);
+    @media screen and (max-width: 600px) {
+        right: 30%;
+        text-align: center;
+        top: 0;
+        padding-top: 1em;
+    }
+}
+
+.tweets {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 40px;
+    height: 800px;
+    min-height: 800px;
+}
+
+.tweet-container {
+    height: 100%;
+    border: 1px solid $white;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    margin: 10px;
+    box-shadow: 0px 0px 4px white;
+}
+
+.view-tweet_button {
+    font-size: 12px;
+    width: 18% !important;
+    margin-top: 10px;
+    padding: unset !important;
+    &:hover {
+        transition: all 0.2s ease-in;
+        opacity: 0.9;
+    }
+}
+
+.svg_icon {
+    // margin-top: 3px;
+    margin-right: 5px;
+    color: blue;
+    width: 12px;
+    height: 12px;
+}

@@ -1,0 +1,7 @@
+{
+    "data": [
+        { "id": "123", "name": "@realDonaldTrump", "active": false },
+        { "id": "456", "name": "@HillaryClinton", "active": false }
+    ]
+
+}

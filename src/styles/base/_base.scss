@@ -1,0 +1,84 @@
+input,
+textarea,
+button,
+submit {
+    border: none;
+    appearance: none;
+    outline: none;
+}
+
+input {
+    // font-family: $font-family-primary;
+    // letter-spacing: 0.3vh;
+    background-color: unset;
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+    color: $font-color-light;
+}
+
+a::selection {
+    text-decoration: none;
+    color: $font-color-light;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    @media screen and (max-width: 600px) {
+        font-weight: 200;
+    }
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: $white;
+    // opacity: 0.8;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+button {
+    cursor: pointer;
+    // user-select: none;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+.error-container {
+    color: red;
+    margin-top: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.app-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    // height: 680px;
+    // min-height: 800px;
+    max-width: $max-width;
+}
