@@ -16,3 +16,11 @@
         transform: scale(1.2);
     }
 }
+
+.active_account {
+    transform: scale(1.03);
+    background-color: $gray;
+    .icon {
+        right: 15px;
+    }
+}

@@ -8,7 +8,7 @@ class Accounts  extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            accounts : props.accounts,
+            accounts : this.props.accounts,
             activeAccount : "",
             account : "@"
         }
@@ -21,13 +21,11 @@ class Accounts  extends React.Component{
         }))
         this.props.dispatch(setinactiveaccount());
         this.props.dispatch(setactiveaccount(account.id));
-        this.props.dispatch(posttweets(account.name));
-       
-        
+        this.props.dispatch(posttweets(account.name));   
     }
 
     handleFormValueChange = (event)=>{
-        console.log('key , value ', "account" , event.target.value )
+       
         let stateValue = event.target.value.replace(/\s/g, '');
         if(stateValue.indexOf('@') === -1){
             stateValue = "@" + stateValue;
@@ -36,6 +34,7 @@ class Accounts  extends React.Component{
     }
 
     handleAddAccount = ()=>{
+       
         if(this.state.account!=="@"){
             this.props.dispatch(addaccount(this.state.account));
             setTimeout(() => {
@@ -47,10 +46,16 @@ class Accounts  extends React.Component{
     handleRemoveAccount = (id)=>{
        
         this.props.dispatch(removeaccount(id))
-       
-        
-        
-       
+ 
+    }
+    setNextActiveAccount =()=>{
+        let activeAcountIndex;
+        this.props.accounts.map((account,index)=>{
+            if(account.active == true){
+                activeAcountIndex = index;
+            }
+        })
+        activeAcountIndex+1 == this.props.accounts.length ? this.setActiveAccount(this.props.accounts[0]) : this.setActiveAccount(this.props.accounts[activeAcountIndex+1]) 
     }
     render(){
         return ( 
@@ -58,13 +63,18 @@ class Accounts  extends React.Component{
             <div>
                 {this.props.accounts.map((account)=>(
                     <div key={account.id} className="twitter_account"> 
-                        <div className="action">
+                        <div className={account.active == true ? "action active_account" : "action"}>
                             <div onClick={()=>this.setActiveAccount(account)}>{account.name}</div>
                             <img className="svg_icon icon" src={remove_src} onClick={()=>this.handleRemoveAccount(account.id)}></img>
                         </div>
                         
                     </div>)
                 )}
+                <div className="twitter_account">
+                    <div className="action">
+                        <div onClick={this.setNextActiveAccount}>Next</div>
+                    </div>
+                </div>
                 <div className="twitter_account">
                     <div className="action"> 
                         <input className="input_field" value={this.state.account} type="text" onChange={this.handleFormValueChange}/>
