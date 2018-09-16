@@ -5,8 +5,6 @@
 }
 
 .icon {
-    position: absolute;
-    right: 35px;
     margin-left: 5px;
     width: 17px !important;
     height: 17px !important;
@@ -20,7 +18,5 @@
 .active_account {
     transform: scale(1.03);
     background-color: $gray;
-    .icon {
-        right: 15px;
-    }
+    .icon {}
 }

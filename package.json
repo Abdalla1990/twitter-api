@@ -70,6 +70,7 @@
         "react-ui-cards": "^1.4.0",
         "redux": "^3.7.2",
         "redux-persist": "^5.4.0",
+        "redux-saga": "^0.16.0",
         "redux-thunk": "^2.2.0",
         "request": "^2.87.0",
         "sass-loader": "6.0.6",

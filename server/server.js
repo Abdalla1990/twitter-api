@@ -26,7 +26,7 @@ app.get('/search',(req,res)=>{
             var feeds = [];
             
             tweets.map((tweet)=>{ 
-                console.log('tweet',tweet.text);
+                
                 let tweetLinkPrefext = 'https://t.co/';
                 let link ;
                
@@ -59,8 +59,6 @@ app.get('/search',(req,res)=>{
 
 app.get('/*', (req, res) => {
 
-   
-    console.log('there')
     res.sendFile(publicPath + '/index.html');
     
     

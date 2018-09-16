@@ -3,7 +3,7 @@ import {setactiveaccount,setinactiveaccount} from '../actions/accounts';
 import {connect} from 'react-redux';
 import Feeds from './Feeds';
 import getActiveAccount from '../selector/getActiveAccount';
-import { posttweets } from '../actions/tweets';
+import { dispatchRequestTweetsData } from '../actions/tweets';
 import Accounts from './Accounts';
 class Home  extends React.Component{
     
@@ -16,16 +16,6 @@ class Home  extends React.Component{
     }
    
    
-    setActiveAccount = (account)=>{
-        this.setState(()=>({
-            activeAccount : account.name
-        }))
-        this.props.dispatch(setinactiveaccount());
-        this.props.dispatch(setactiveaccount(account.id));
-        this.props.dispatch(posttweets(account.name));
-       
-        
-    }
 
    
     
@@ -37,7 +27,7 @@ class Home  extends React.Component{
                 <div className="accounts-menu_container">
                 
                     <div className="twitter-accounts_container">
-                        <div className="twitter_account"> <div className="title">Twitter Feeds</div></div>
+                        <div className="twitter_account"> <div className="title">Twitter Accounts</div></div>
                         <Accounts />
                     </div> 
                 </div>

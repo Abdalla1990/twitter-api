@@ -1,7 +1,7 @@
 import React from 'react';
 import {setactiveaccount,setinactiveaccount, addaccount,removeaccount} from '../actions/accounts';
 import {connect} from 'react-redux';
-import { posttweets } from '../actions/tweets';
+import { dispatchRequestTweetsData,dispatchTweetsDataPending } from '../actions/tweets';
 import {add_src,remove_src} from '../../server/keys';
 class Accounts  extends React.Component{
     
@@ -20,8 +20,10 @@ class Accounts  extends React.Component{
             activeAccount : account.name
         }))
         this.props.dispatch(setinactiveaccount());
+        this.props.dispatch(dispatchTweetsDataPending(account.name));
+        this.props.dispatch(dispatchRequestTweetsData(account.name));
         this.props.dispatch(setactiveaccount(account.id));
-        this.props.dispatch(posttweets(account.name));   
+        
     }
 
     handleFormValueChange = (event)=>{
@@ -71,13 +73,13 @@ class Accounts  extends React.Component{
                     </div>)
                 )}
                 <div className="twitter_account">
-                    <div className="action">
-                        <div onClick={this.setNextActiveAccount}>Next</div>
+                    <div className="action" onClick={this.setNextActiveAccount}>
+                        <div >Next</div>
                     </div>
                 </div>
                 <div className="twitter_account">
                     <div className="action"> 
-                        <input className="input_field" value={this.state.account} type="text" onChange={this.handleFormValueChange}/>
+                        <input className="input_field" placeholder="add a twitter account" value={this.state.account} type="text" onChange={this.handleFormValueChange}/>
                         <img className="svg_icon icon" src={add_src} onClick={this.handleAddAccount}></img>
                     </div>  
                 </div>

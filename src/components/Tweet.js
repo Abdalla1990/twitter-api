@@ -9,15 +9,17 @@ import {img_src} from '../../server/keys';
             return( 
                 
                     <div key={index} className="tweet-container">
-            
+                        
                         <div>{tweet.text}</div>
                     
-                        {tweet.link !== undefined && <div className="view-tweet_button twitter_account">
-                            <div className="action">
+                        {tweet.link !== undefined && 
+                        <div className="view-tweet_button twitter_account">
+                            <div className="action view-tweet_button_action ">
                                 <img className="svg_icon" src={img_src}></img>
                                     <a href={tweet.link} target="blank">View Tweet</a>
                             </div>
-                        </div>}
+                        </div>
+                        }
                     </div>)
         })
     }     

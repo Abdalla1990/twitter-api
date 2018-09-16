@@ -8,12 +8,12 @@
     transition: all .3s ease-in;
     border-left: solid 1px $white;
     // background-color: darken($white, 30%);
-    @media screen and (max-width: 600px) {
-        right: 30%;
-        text-align: center;
-        top: 0;
-        padding-top: 1em;
-    }
+    // @media screen and (max-width: 600px) {
+    //     right: 30%;
+    //     text-align: center;
+    //     top: 0;
+    //     padding-top: 1em;
+    // }
 }
 
 .tweets {
@@ -31,20 +31,26 @@
     border: 1px solid $white;
     padding: 15px;
     border-radius: 15px;
-    color: white;
+    color: $gray;
     margin: 10px;
-    box-shadow: 0px 0px 4px white;
+    box-shadow: 0px 0px 4px $gray;
 }
 
 .view-tweet_button {
     font-size: 12px;
-    width: 18% !important;
+    // width: 18% !important;
     margin-top: 10px;
+    justify-content: flex-start !important;
     padding: unset !important;
     &:hover {
         transition: all 0.2s ease-in;
         opacity: 0.9;
     }
+}
+
+.view-tweet_button_action {
+    justify-content: center !important;
+    width: unset !important;
 }
 
 .svg_icon {
@@ -53,4 +59,8 @@
     color: blue;
     width: 12px;
     height: 12px;
+}
+
+.tweet {
+    color: $gray !important;
 }
