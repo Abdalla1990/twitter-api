@@ -23,7 +23,7 @@ In package.json :
 | hotload-api | loads the api and watches for changes
 | start | start the node server 'no hot reload'
 | dev-server | loads the front-end ONLY , no interaction withthe api|
-| dev_api | loads the front-end and the backend and watches for changes on both 'this might through Error: listen EADDRINUSE :::3000 sometime but i won't block the processes' |
+| dev_api | loads the front-end and the backend and watches for changes on both 'this might through Error: listen EADDRINUSE :::3000 sometime but it won't block the processes' |
 | build:dev | prepares a build bundle.js file
 | build:dev | prepares a bundle.js.map file for deployment
 | heroku-postbuild | used by Heroku to build the app upon deployment
