@@ -1,6 +1,6 @@
 import React from 'react';
 import readFeeds from './tools/readFeeds';
-import {img_src} from '../../server/keys';
+import {img_src} from './tools/keys';
 
 
     const Tweet = ({tweets}) =>{
@@ -9,7 +9,6 @@ import {img_src} from '../../server/keys';
             return( 
                 
                     <div key={index} className="tweet-container">
-                        
                         <div>{tweet.text}</div>
                     
                         {tweet.link !== undefined && 
@@ -18,8 +17,7 @@ import {img_src} from '../../server/keys';
                                 <img className="svg_icon" src={img_src}></img>
                                     <a href={tweet.link} target="blank">View Tweet</a>
                             </div>
-                        </div>
-                        }
+                        </div>}
                     </div>)
         })
     }     

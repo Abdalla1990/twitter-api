@@ -2,9 +2,8 @@ import React from 'react';
 import Tweet from './Tweet';
 import {connect} from 'react-redux';
 import getActiveAccount from '../selector/getActiveAccount';
-import readFeeds from './tools/readFeeds';
 import {scrollDirection} from '../animation/scroll'
-class Feeds  extends React.Component{
+class Tweets  extends React.Component{
     
     constructor(props){
         super(props);
@@ -59,4 +58,4 @@ const mapStateToProps = (state)=>{
     }
 }
 
-export default connect(mapStateToProps)(Feeds);
+export default connect(mapStateToProps)(Tweets);

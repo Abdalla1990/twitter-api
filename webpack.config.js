@@ -57,9 +57,22 @@ module.exports = (env) => {
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
-            contentBase: OutPutPath,
-            historyApiFallback: true
-        }
+          contentBase: OutPutPath,
+          watchContentBase: true,
+          historyApiFallback: true,
+          proxy: [ // allows redirect of requests to webpack-dev-server to another destination
+            {
+              context: ['/', '/search'], 
+              target: 'http://localhost:3000', 
+              secure: false,//don't use https
+              overlay: { 
+                warnings: true, 
+                errors: true,
+              }
+            }
+          ]
+        },
+        
         
     };
 }

@@ -17,33 +17,16 @@ app.get('/search',(req,res)=>{
         access_token_key: env.parsed.oauth_token,
         access_token_secret: env.parsed.tokenSecret
     });
-    // var params1 = {follow:'1041532963161137200,'};
-    // client.stream('statuses/filter', {follow: '1041532963161137200,'}, function(stream) {
-    //     stream.on('data', function(event) {
-    //       console.log(event && event.text);
-    //     });
-       
-    //     stream.on('error', function(error) {
-    //     //   throw error;
-    //     console.log('errrrror')
-    //     });
-    //   });
 
-    
-
-    
-
-
-    
     var params = {screen_name:req.query['0'],count:100};
-    
+ 
     client.get('statuses/user_timeline.json', params, (error, tweets, response) =>{
         if (!error) {
             
             var feeds = [];
             
             tweets.map((tweet)=>{ 
-                // console.log(tweet);
+                // console.log(tweet.text);
                 let tweetLinkPrefext = 'https://t.co/';
                 let link ;
                
@@ -64,13 +47,7 @@ app.get('/search',(req,res)=>{
             
         }
     });
-   
     
-    
-
-
-
-
 })
 
 app.get('/*', (req, res) => {
@@ -82,5 +59,5 @@ app.get('/*', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`app is running on ${port}`);
+    console.log(`api is running on ${port} go to http://localhost:8080/ to if you runned 'npm run dev_api' `);
 })

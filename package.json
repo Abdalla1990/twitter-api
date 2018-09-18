@@ -4,14 +4,20 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "serve": "live-server public/",
+
+        "hotload-api": "nodemon ./server/server.js",
+        "start": " node server/server.js",
+
+        "dev-server": "webpack-dev-server",
+
+
+        "dev_api": " webpack-dev-server & npm run hotload-api --inline --hot --open 'Google Chrome' ",
+
         "build:dev": "webpack",
         "build:prod": "webpack -p --env production",
-        "dev-server": "webpack-dev-server",
-        "start": " node server/server.js",
         "heroku-postbuild": "npm run build:prod"
     },
+
     "engines": {
         "node": "v8.5.0"
     },

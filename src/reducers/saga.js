@@ -15,6 +15,6 @@ function* sagaFetchTweets(action) {
   
 
 export default function* watchSagaFetchTweets() {
-    console.log(' i am runned');
+    // console.log(' i am runned');
     yield takeEvery(REQUEST_TWEETS_DATA, sagaFetchTweets);
 }

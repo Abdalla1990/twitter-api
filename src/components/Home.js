@@ -1,7 +1,7 @@
 import React from 'react';
 import {setactiveaccount,setinactiveaccount} from '../actions/accounts';
 import {connect} from 'react-redux';
-import Feeds from './Feeds';
+import Tweets from './Tweets';
 import getActiveAccount from '../selector/getActiveAccount';
 import { dispatchRequestTweetsData } from '../actions/tweets';
 import Accounts from './Accounts';
@@ -33,7 +33,7 @@ class Home  extends React.Component{
                 </div>
                 
                        
-                <Feeds/>
+                <Tweets/>
                 
             </div>
         )
