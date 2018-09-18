@@ -29,10 +29,12 @@ In package.json :
 | heroku-postbuild | used by Heroku to build the app upon deployment
 
 1- `git clone` the repo https://github.com/Abdalla1990/twitter-api.git
+
 2- `cd` to the folder of the app 
+
 3- run `npm install` to install the `node_modules`
-4- run `npm run dev_api` for development 
-and go to `http://localhost:8080/` 
+
+4- run `npm run dev_api` for development and go to `http://localhost:8080/` 
 
 ### alternitavely : 
 
