@@ -20,7 +20,10 @@ class Tweets  extends React.Component{
             
                 this.setState(()=>({activeAccount:this.props.activeAccount.name}));
                 let tweets = document.getElementById('tweets');
+               
                 scrollDirection(tweets,'top',600,400);
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
         } 
         
